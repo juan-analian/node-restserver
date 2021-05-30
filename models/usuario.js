@@ -25,8 +25,9 @@ const UsuarioSchema = Schema({
     //valida que el rol sea alguna de estas 2 enumeraciones
     rol: {
         type: String,
-        required: true //,
-        //enum: ['ADMIN_ROLE','USER_ROLE']
+        required: true, //,
+        default: 'USER_ROLE',
+        enum: ['ADMIN_ROLE','USER_ROLE']
     },
 
     estado : {
