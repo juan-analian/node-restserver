@@ -22,7 +22,7 @@ const validarJWT = async (req = request, res = response, next) => {
 
         const {uid} = jwt.verify(token, process.env.SECRETORPRIVATEKEY);
 
-        //lo sumamos al request!
+        
         const usuario  = await Usuario.findById(uid);     
 
 
@@ -39,7 +39,8 @@ const validarJWT = async (req = request, res = response, next) => {
                 msg: 'token no valido - usuario dado de baja'
             });
         }
-
+        
+        //lo sumamos al request!
         req.usuario = usuario;
 
         next();
